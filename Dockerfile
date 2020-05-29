@@ -4,9 +4,9 @@ ARG ARTHAS_VERSION="3.3.0"
 ARG MIRROR=false
 ARG TIMEZONE=""
 
-ENV MAVEN_HOST=http://repo1.maven.org/maven2 \
+ENV MAVEN_HOST=https://repo1.maven.org/maven2 \
     ALPINE_HOST=dl-cdn.alpinelinux.org \
-    MIRROR_MAVEN_HOST=http://maven.aliyun.com/repository/public \
+    MIRROR_MAVEN_HOST=https://maven.aliyun.com/repository/public \
     MIRROR_ALPINE_HOST=mirrors.aliyun.com \
     LANG=en_US.UTF-8
 
