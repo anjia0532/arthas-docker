@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-ARG ARTHAS_VERSION="3.2.0"
+ARG ARTHAS_VERSION="3.3.0"
 ARG MIRROR=false
 ARG TIMEZONE=""
 
@@ -24,6 +24,7 @@ RUN if [ -n "$TIMEZONE" ]; then apk add --no-cache tzdata && \
     cp "/usr/share/zoneinfo/$TIMEZONE" /etc/localtime && \
     echo "$TIMEZONE" >  /etc/timezone ; fi
 
+COPY fonts/* /usr/share/fonts/ttf-dejavu/
 
 # Tini is now available at /sbin/tini
 ENTRYPOINT ["/sbin/tini", "--"]
