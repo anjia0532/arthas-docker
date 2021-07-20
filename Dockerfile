@@ -12,7 +12,7 @@ ENV MAVEN_HOST=https://repo1.maven.org/maven2 \
 # if use mirror change to aliyun mirror site
 RUN if $MIRROR; then MAVEN_HOST=${MIRROR_MAVEN_HOST} ;ALPINE_HOST=${MIRROR_ALPINE_HOST} ; sed -i "s/dl-cdn.alpinelinux.org/${ALPINE_HOST}/g" /etc/apk/repositories ; fi && \
     # https://github.com/docker-library/openjdk/issues/76
-    apk add --no-cache tini && \ 
+    apk add --no-cache tini  ttf-dejavu fontconfig && \ 
     # download & install arthas
     wget -qO /tmp/arthas.zip "${MAVEN_HOST}/com/taobao/arthas/arthas-packaging/${ARTHAS_VERSION}/arthas-packaging-${ARTHAS_VERSION}-bin.zip" && \
     mkdir -p /opt/arthas && \
